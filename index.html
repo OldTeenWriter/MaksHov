@@ -3,6 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  // Lock hero height to the viewport size at load (not on every scroll tick).
+  // Mobile Safari's address bar collapsing fires continuous resize events;
+  // using raw 100vh/100dvh makes the hero video visibly rescale as that
+  // bar animates. Freezing the value here keeps the hero size stable
+  // and avoids the visible "jump"/gap once the bar settles.
+  (function(){
+    function setVH(){
+      document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01) + 'px');
+    }
+    setVH();
+    var t;
+    window.addEventListener('orientationchange', function(){
+      clearTimeout(t);
+      t = setTimeout(setVH, 250);
+    });
+  })();
+</script>
 <link rel="canonical" href="https://music-production-school.com.ua/">
 <meta name="robots" content="index, follow">
 
@@ -62,7 +80,7 @@
   .stage{
     position: relative;
     height:100vh;
-    height:100dvh;
+    height:calc(var(--vh, 1vh) * 100);
     width:100vw;
     overflow:hidden;
   }
@@ -293,9 +311,9 @@
       padding-left: 7vw;
     }
     .eq{ margin-bottom: 18px; }
-    .subtitle{ margin-top: 22px; }
-    .features{ margin-top: 32px; gap:10px; }
-    .cta{ margin-top: 36px; }
+    .subtitle{ margin-top: 26px; }
+    .features{ margin-top: 38px; gap:13px; }
+    .cta{ margin-top: 42px; }
   }
 
   @media (prefers-reduced-motion: reduce){
