@@ -285,7 +285,8 @@
 
   @media (max-width: 640px){
     .content{
-      padding-top: max(3vh, calc(var(--header-h-mobile, 52px) + 14px));
+      justify-content: flex-start;
+      padding-top: max(20vh, calc(var(--header-h-mobile, 52px) + 14px));
       padding-right: 7vw;
       padding-bottom: 3vh;
       padding-left: 7vw;
@@ -373,6 +374,10 @@
       padding: 0 0 0 20px !important;
       border-left: 2px solid var(--amber) !important;
     }
+  }
+
+  @media (max-width: 640px){
+    .stats{ display:none; }
   }
 
   /* ---- myths / trust section (studio photo background, darkened) ---- */
