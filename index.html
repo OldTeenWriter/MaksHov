@@ -5485,6 +5485,22 @@
   .footer-bottom .dot{
     opacity:0.4;
   }
+  .footer-credit-text{
+    font-size: 0.9em;
+  }
+  .footer-credit-name{
+    color: rgba(244,236,221,0.5);
+    font-weight: 500;
+    font-size: 1em;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: rgba(244,236,221,0.3);
+    text-underline-offset: 3px;
+    transition: color 0.3s ease;
+  }
+  .footer-credit-name:hover{
+    color: rgba(244,236,221,0.8);
+  }
   .footer-privacy-link{
     color: rgba(244,236,221,0.6);
     text-decoration: underline;
@@ -5698,6 +5714,8 @@
       <span>&copy; <span id="footerYear"></span> MaksHov. Всі права захищені.</span>
       <span class="dot">•</span>
       <button type="button" class="footer-privacy-link" id="openPrivacyModal">Політика конфіденційності</button>
+      <span class="dot">•</span>
+      <span class="footer-credit-text">Designed &amp; Developed by <a href="https://t.me/dopaminekeeper" target="_blank" rel="noopener" class="footer-credit-name">DopamineKeeper</a></span>
     </div>
   </div>
 </footer>
